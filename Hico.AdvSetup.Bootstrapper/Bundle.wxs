@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Bundle Name="Hico.AdvSetup.Bootstrapper"
+         Version="1.0.0.0"
+         Manufacturer="HICO-ICS"
+         UpgradeCode="416b6bbf-2beb-4187-9f83-cdb764db2840">
+    <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost">
+      <Payload SourceFile="$(var.Hico.AdvSetup.UI.TargetDir)Hico.AdvSetup.UI.dll" />
+      <Payload SourceFile="$(var.Hico.AdvSetup.UI.TargetDir)BootstrapperCore.config" />
+      <Payload SourceFile="$(var.Hico.AdvSetup.UI.TargetDir)GalaSoft.MvvmLight.dll" />
+      <Payload SourceFile="$(var.Hico.AdvSetup.UI.TargetDir)GalaSoft.MvvmLight.Extras.dll" />
+      <Payload SourceFile="$(var.Hico.AdvSetup.UI.TargetDir)GalaSoft.MvvmLight.Platform.dll" />
+      <Payload SourceFile="$(var.Hico.AdvSetup.UI.TargetDir)MahApps.Metro.dll" />
+      <Payload SourceFile="$(var.Hico.AdvSetup.UI.TargetDir)System.Windows.Interactivity.dll" />
+    </BootstrapperApplicationRef>
+    <WixVariable Id="WixMbaPrereqLicenseUrl" Value=""/>
+    <Chain>
+      <PackageGroupRef Id="NetFx46Web"/>
+      <!--<MsiPackage SourceFile="Lib\MyInstaller.msi" />-->
+    </Chain>
+  </Bundle>
+</Wix>
